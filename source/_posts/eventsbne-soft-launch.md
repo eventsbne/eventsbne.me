@@ -43,3 +43,7 @@ I'd really like to build on the event management tools, namely around:
 1. giving the tools, skills, and encouraging folks to speak at meetups
 
 So hopefully with time we can make a thing of this. I am super proud of the Brisbane tech community, and I reckon we're only getting better from here.
+
+<img src="/images/2018/brisbane-tech.jpg" alt="NodeGirls, BrisJS and Brisbane Tech Drinks">
+
+_Pictured: NodeGirls, BrisJS and Brisbane Tech Drinks_
