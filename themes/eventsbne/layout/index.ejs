@@ -1,0 +1,26 @@
+<div class="hero">
+  <div class="container">
+    <div class="row flexend">
+      <div class="col-md-6 col-lg-8 typography">
+        <img src="/images/hero/<%= config.subtitleImg %>" alt="<%= config.subtitle %>">
+      </div>
+      <div class="col-md-6 col-lg-4 align-bottom upcoming-container mt-4">
+        <%- partial('_widget/upcoming') %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-8 col-lg-6 col-md-6 main-content">
+      <%- partial('_partial/article-summary', {post: page.posts.eq(0), index: true}) %>
+      <%- partial('_partial/article-summary', {post: page.posts.eq(1), index: true}) %>
+      <%- partial('_widget/date-checker') %>
+    </div>
+    <div class="col-xl-4 col-lg-6 col-md-6 sidebar">
+      <% theme.widgetsHome.forEach(function(widget){ %>
+        <%- partial('_widget/' + widget) %>
+      <% }) %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<% if(post.layout === 'externalLink') { %>
+  <article id="<%= post.layout %>-<%= post.slug %>" class="article teaser article-type-<%= post.layout %>">
+    <a href="<%= post.externalLink %>">
+      <% if(post.image) { %>
+        <img src="<%= post.image %>" alt="" class="teaser-image">
+      <% } %>
+      <h2 class="wrap-target"> <span class="badge badge-secondary">Link</span> <%= post.title %></h2>
+    </a>
+    <p class="lead"><%= post.teaser || post.description %></p>
+    <% if (theme.excerpt_link){ %>
+      <p class="article-more-link">
+        <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+      </p>
+    <% } %>
+  </article>
+<% } else { %>
+<article id="<%= post.layout %>-<%= post.slug %>" class="article teaser article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+  <% if (post.link || post.title){ %>
+    <a href="<%= url_for(post.path) %>" itemprop="url">
+      <% if(post.image) { %>
+        <img src="<%= post.image %>" alt="" class="teaser-image">
+      <% } %>
+      <h2 class="wrap-target"><%= post.title %></h2>
+    </a>
+    <p class="lead"><%= post.teaser || post.description %></p>
+  <% } %>
+
+  <div class="article-entry" itemprop="articleBody">
+    <%- post.excerpt %>
+  </div>
+  <% if (theme.excerpt_link){ %>
+    <p class="article-more-link">
+      <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+    </p>
+  <% } %>
+</article>
+<% } %>

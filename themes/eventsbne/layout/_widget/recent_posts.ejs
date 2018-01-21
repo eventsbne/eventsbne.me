@@ -1,0 +1,24 @@
+<div class="card recent-news mb-4">
+  <div class="card-body">
+    <h2 class="card-title h3">Recent news</h2>
+  </div>
+  <div>
+  <% if (site.posts.length){ %>
+    <div class="list-group list-group-flush">
+      <% site.posts.sort('date', -1).limit(2).each(function(post){ %>
+        <a
+        class="wrap list-group-item list-group-item-action flex-column align-items-start"
+        href="<%- url_for(post.path) %>">
+          <div class="d-flex w-100 justify-content-between">
+            <p>
+              <span class="mb-1 h6 wrap-target"><%= post.title %></span>
+              <br>
+              <small><%= post.teaser || post.description %></small>
+            </p>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  <% } %>
+  </div>
+</div>

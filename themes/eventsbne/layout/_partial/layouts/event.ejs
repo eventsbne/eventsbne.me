@@ -1,0 +1,100 @@
+<article id="<%= page.layout %>-<%= page.slug %>" class="article article-type-<%= page.layout %> standalone"  itemscope itemtype="http://schema.org/Event">
+  <% if(page.image) { %>
+    <div class="hero" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgba(0,0,0,0.5) 100%), url('<%= page.image %>')">
+  <% } %>
+      <div class="container mt-5">
+        <div class="row flexend">
+          <div class="col-md-7">
+            <h1 class="font-weight-bold <%= page.image ? 'styled' : ''%> display-<%= page.title.length > 30 ? 5 : 3 %> pr-1" itemprop="name">
+              <%= page.title %>
+            </h1>
+          </div>
+          <div class="col-md-4">
+            <%- page.image ? '<div class="card"><div class="card-body">' : ''%>
+              <% if(page.venue.name) { %>
+                <div class="h4 mb-0 font-weight-light">at <%= page.venue.name %></div>
+              <% } %>
+              <time
+                class="d-block"
+                itemprop="startDate"
+                datetime="<%= new Date(Number(page.timeStart)).toISOString() %>"
+                content="<%= new Date(Number(page.timeStart)).toISOString() %>"
+                >
+                <div class="time display-4 mb-0"><%= time(new Date(Number(page.timeStart)), config.time_format) %></div>
+                <div class="date h2 styled-yellow"><%= date(new Date(Number(page.timeStart)), config.date_format) %></div>
+              </time>
+            <%- page.image ? '</div></div>' : ''%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% if(page.image) { %>
+    </div>
+  <% } %>
+
+  <div class="article-main container mt-5">
+    <div class="row">
+      <div class="col-md-5 offset-md-1">
+        <%- page.content %>
+
+        <div class="card mt-5">
+          <div class="card-header">
+            <h2 class="h6 mb-0">Getting there</h2>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-5">
+                <h3 class="h4"><%= page.venue.name %></h3>
+                <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                  <span itemprop="streetAddress"><%= page.venue.contactAddress %></span>
+                  <span itemprop="addressLocality"><%= page.venue.contactCity %></span>
+                  <span hidden itemprop="addressRegion"><%= page.venue.contactCountry %></span>
+                </div>
+                <a href="<%= page.url %>" class="btn btn-primary mt-2">Get Tickets</a>
+              </div>
+              <div class="col-md-7">
+                <% if(page.venue.lon && page.venue.lat) { %>
+                  <a href="https://www.google.com.au/maps/search/<%= page.venue.name %>/@<%= page.venue.lat %>,<% page.venue.lon %>,15z">
+                    <img
+                    style="width:100%;height:auto;"
+                    alt="map of <%= page.venue.name %>, <%= page.venue.contactCity %>"
+                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v9/static/pin-s-building+285A98(<%= page.venue.lon %>,<%= page.venue.lat %>)/<%= page.venue.lon %>,<%= page.venue.lat %>,13,0/350x250@2x?access_token=pk.eyJ1IjoiYXNoa3lkIiwiYSI6ImNqY25haWgyaTBraDgyenFub21yYXEzZ3gifQ.K2j7J-jCiCUsDybuks_-zA&amp;attribution=false"
+                    >
+                  </a>
+                <% } else { %>
+                  <p>The address could not be shown.</p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="card offers mb-4" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <div class="card-body">
+            <p>This event is organized by <a href="<%= page.organizer.url %>"><%= page.organizer.name %></a>.</p>
+            <% if(page.price) { %>
+              <div class="event-price" itemprop="price" content="<%= page.price %>">
+                <strong>Price:</strong>
+                <%= Number(page.price) ? page.price : 'Free' %>
+              </div>
+              <span itemprop="priceCurrency" content="AUD" />
+            <% } %>
+            <a itemprop="url" href="<%= page.url %>" class="btn btn-primary btn-lg">Get Tickets</a>
+          </div>
+        </div>
+
+        <% if(page.organizer.description){ %>
+          <h2>About <%= page.organizer.name %></h2>
+          <div class="card">
+            <div class="card-body">
+              <p class="text"><%= page.organizer.description %></p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</article>
+
+<%- partial('_partial/footer-recirculation') %>
