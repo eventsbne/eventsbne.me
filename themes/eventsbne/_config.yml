@@ -1,0 +1,20 @@
+# Header
+menu:
+  Home: /
+menuFooter:
+  Home: /
+  Archives: /archives/
+  Privacy Policy: /privacy/
+rss: /rss.xml
+excerpt_link: Read More
+widgets:
+- upcoming
+- recent_posts
+- feedback
+widgetsFooter:
+- upcoming
+- recent_posts
+widgetsHome:
+- twitter
+favicon: /images/logo/logo-512.png
+logoSvg: /images/logo/logo.svg

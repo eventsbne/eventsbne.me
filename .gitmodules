@@ -1,0 +1,3 @@
+[submodule "submodules/eventsbne.me-generated"]
+	path = submodules/eventsbne.me-generated
+	url = git@github.com:eventsbne/eventsbne.me-generated.git

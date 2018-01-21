@@ -1,0 +1,51 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> standalone" itemscope itemprop="blogPost">
+  <% if (post.link || post.title){ %>
+    <header class="article-header">
+      <%- partial('post/title', {class_name: 'heading'}) %>
+      <p class="lead typo"><%= post.description %></p>
+      <% if (!index){ %>
+      <div class="article-meta container">
+        <div class="row bio mb-3">
+          <% author = postAuthor(site, post) %>
+          <% if(author.fallback) { %>
+            <div class="col-12">
+              <%- partial('post/date', {class_name: 'article-date'}) %>
+              <%- partial('post/category') %>
+            </div>
+          <% } else { %>
+            <div class="col-4 col-lg-2">
+              <img class="avatar" src="<%= author.avatar %>?s=200" alt="<% author.name %>">
+            </div>
+            <div class="col-8 col-lg-10">
+              <p class="h6"><%= author.name %></p>
+              <p class="text"><%= author.bio %></p>
+              <%- partial('post/date', {class_name: 'article-date'}) %>
+              <%- partial('post/category') %>
+            </div>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+    </header>
+  <% } %>
+  <%- /* partial('post/gallery') */ %>
+  <div class="article-entry typo" itemprop="articleBody">
+    <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
+      <% if (theme.excerpt_link){ %>
+        <p class="article-more-link">
+          <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+        </p>
+      <% } %>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
+  </div>
+  <% if (post.republished) { %>
+  <div class="card metadata">
+    <div class="card-body">
+      This article was republished from <a href="<%= post.republished.url %>"><%= post.republished.from %></a> with permission.
+    </div>
+  </div>
+  <% } %>
+</article>

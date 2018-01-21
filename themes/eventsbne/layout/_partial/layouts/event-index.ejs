@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-xl-8 col-lg-6 main-content">
+      <h1 class="mb-3"><%= page.title %></h1>
+      <div class="list-group mb-4">
+      <% page.events.forEach(function(event){ %>
+        <a
+          href="<%= event.uri %>"
+          class="wrap list-group-item list-group-item-action flex-column align-items-start"
+          title="Event at <%= new Date(event.timeStart).toString() %>">
+          <div class="d-flex w-100 justify-content-between">
+            <p>
+              <span class="mb-1 h6 wrap-target"><%= event.name %></span>
+              <br>
+              <small>
+                <%= printDate(event.timeStart) %>
+                with
+                <%= event.organizer %>
+              </small>
+            </p>
+          </div>
+        </a>
+      <% }) %>
+      </div>
+      <%- partial('_widget/ad') %>
+    </div>
+    <div class="col-xl-4 col-lg-6 sidebar">
+      <%- partial('_partial/sidebar-page') %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 main-content">
+      <%- partial('_partial/archive', {pagination: config.tag, index: true}) %>
+    </div>
+    <div class="col-md-6 sidebar">
+      <% theme.widgets.forEach(function(widget){ %>
+        <%- partial('_widget/' + widget) %>
+      <% }) %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<footer>
+  <div class="background-pink">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ul class="list-inline mb-3 mt-3">
+            <% for (var i in theme.menuFooter){ %>
+            <li class="list-inline-item">
+              <a href="<%- url_for(theme.menuFooter[i]) %>" class="btn btn-dark"><%= i %></a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="background-black foreground-white pt-5 pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <%- partial('_widget/email-signup') %>
+        </div>
+        <div class="col-lg-3">
+          <p class="mb-0">
+            <% const copyright = footerCopyright(config, site, page) %>
+              &copy; <%= date(new Date(), 'YYYY') %> <%= copyright.author %>
+          </p>
+          <p class="small">
+            <%- copyright.copyright %>.
+          </p>
+          <p class="small">
+              Hosted by the good folks at <a href="https://www.netlify.com/">Netlify</a>.
+              Map&nbsp;data&nbsp;copyright © 2018 <a href="http://openstreetmap.org/">O<span class="nomobile">pen</span>S<span class="nomobile">treet</span>M<span class="nomobile">ap</span></a>.
+              Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.
+          </p>
+          <p class="small"><a href="https://github.com/AshKyd/eventsbne/issues">Submit a bug report</a> or <a href="https://github.com/AshKyd/eventsbne/">contribute to this site on GitHub</a></p>
+        </div>
+        <div class="col-lg-4 small">
+          <p>The information contained in this website is for general information purposes only. While we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk. For the most up to date info, please see the third party ticketing pages.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

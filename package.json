@@ -1,0 +1,40 @@
+{
+  "name": "eventsbne.me",
+  "version": "1.0.0",
+  "description": "The eventsbne site & means to update it",
+  "main": "index.js",
+  "scripts": {
+    "start": "hexo server",
+    "update": "cd submodules/eventsbne.me-generated; git submodule init; git submodule update;",
+    "build": "npm run update;cp submodules/eventsbne.me-generated/generated/* source/ -R; hexo generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AshKyd/eventsbne.git"
+  },
+  "author": "Ash Kyd <ash@kyd.com.au>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AshKyd/eventsbne/issues"
+  },
+  "homepage": "https://github.com/AshKyd/eventsbne#readme",
+  "hexo": {
+    "version": "3.4.4"
+  },
+  "dependencies": {
+    "hexo": "^3.2.0",
+    "hexo-generator-archive": "^0.1.4",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-feed": "^1.2.2",
+    "hexo-generator-index": "^0.2.0",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.3.0",
+    "hexo-renderer-less": "^0.2.0",
+    "hexo-renderer-marked": "^0.3.0",
+    "hexo-server": "^0.2.0"
+  },
+  "devDependencies": {
+    "hexo-cli": "^1.0.4"
+  }
+}
