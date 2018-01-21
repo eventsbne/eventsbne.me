@@ -5,7 +5,6 @@ db.json
 node_modules/
 public/
 .deploy*/
-generated
 source/events
 source/upcoming.json
 public
