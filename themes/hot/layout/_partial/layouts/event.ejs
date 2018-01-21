@@ -11,7 +11,7 @@
           </div>
           <div class="col-md-4">
             <%- page.image ? '<div class="card"><div class="card-body">' : ''%>
-              <% if(page.venue.name) { %>
+              <% if(page.venue) { %>
                 <div class="h4 mb-0 font-weight-light">at <%= page.venue.name %></div>
               <% } %>
               <time
@@ -44,16 +44,18 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-5">
-                <h3 class="h4"><%= page.venue.name %></h3>
-                <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                  <span itemprop="streetAddress"><%= page.venue.contactAddress %></span>
-                  <span itemprop="addressLocality"><%= page.venue.contactCity %></span>
-                  <span hidden itemprop="addressRegion"><%= page.venue.contactCountry %></span>
-                </div>
+                <% if(page.venue) { %>
+                  <h3 class="h4"><%= page.venue.name %></h3>
+                  <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress"><%= page.venue.contactAddress %></span>
+                    <span itemprop="addressLocality"><%= page.venue.contactCity %></span>
+                    <span hidden itemprop="addressRegion"><%= page.venue.contactCountry %></span>
+                  </div>
+                <% } %>
                 <a href="<%= page.url %>" class="btn btn-primary mt-2">Get Tickets</a>
               </div>
               <div class="col-md-7">
-                <% if(page.venue.lon && page.venue.lat) { %>
+                <% if(page.venue && page.venue.lon && page.venue.lat) { %>
                   <a href="https://www.google.com.au/maps/search/<%= page.venue.name %>/@<%= page.venue.lat %>,<% page.venue.lon %>,15z">
                     <img
                     style="width:100%;height:auto;"
