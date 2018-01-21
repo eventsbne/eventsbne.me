@@ -110,23 +110,7 @@ article.article-type-post.standalone{
     height:100%;
   }
 
-  background-image:
-    url('../images/hero/southbank-beach.jpg'),
-    linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
-  @media (max-width:1920px){
-    background-image:
-      url('../images/hero/southbank-beach-1920.jpg'),
-      linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
-  }
-  @media (max-width:1366px){
-    background-image:
-      url('../images/hero/southbank-beach-1366.jpg'),
-      linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
-  }
   @media (max-width:600px){
-    background-image:
-      url('../images/hero/southbank-beach-600.jpg'),
-      linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
     background-size:100%;
     background-position: left top;
     margin-bottom:30px;
@@ -149,6 +133,29 @@ article.article-type-post.standalone{
     }
     .typography{
       border-bottom:10px solid @yellow;
+    }
+  }
+}
+
+.no-webp{
+  .hero{
+    background-image:
+      url('../images/hero/southbank-beach.jpg'),
+      linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
+    @media (max-width:1920px){
+      background-image:
+        url('../images/hero/southbank-beach-1920.jpg'),
+        linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
+    }
+    @media (max-width:1366px){
+      background-image:
+        url('../images/hero/southbank-beach-1366.jpg'),
+        linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
+    }
+    @media (max-width:600px){
+      background-image:
+        url('../images/hero/southbank-beach-600.jpg'),
+        linear-gradient(to bottom, #72a3e5 0%,#f7f1e2 100%);
     }
   }
 }
