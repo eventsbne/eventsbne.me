@@ -1,10 +1,12 @@
 # Header
 menu:
   Home: /
+  Upcoming events: /upcoming/
 menuFooter:
   Home: /
-  Archives: /archives/
-  Privacy Policy: /privacy/
+  Upcoming events: /upcoming/
+  News archive: /archives/
+  Privacy policy: /privacy/
 rss: /rss.xml
 excerpt_link: Read More
 widgets:

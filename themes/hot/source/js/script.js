@@ -1,13 +1,15 @@
+const moment = require('moment');
+require('./modernizr-custom.min');
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 function printDate(source){
   const date = new Date(source);
   const now = new Date();
 
-  const time = `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
-  if(date.getDay() != now.getDay()) {
-    return `${days[date.getDay()]} at ${time}`;
+  if(date > moment().add(3, 'days')){
+    return moment(date).format('LL LT');
   } else {
-    return `At ${time}`;
+    return moment(date).format('dddd hA');
   }
 }
 
@@ -124,7 +126,10 @@ const apps = {
       fetchDate(date, el.querySelector('.results'));
 
     });
-  }
+  },
+  relativeDate: (data, config, el) => {
+    el.innerText = printDate(el.attributes.datetime.value);
+  },
 }
 
 function runApps(data){

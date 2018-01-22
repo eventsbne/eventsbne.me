@@ -4,7 +4,7 @@
   "description": "The eventsbne site & means to update it",
   "main": "index.js",
   "scripts": {
-    "start": "hexo server",
+    "start": "npm run build;hexo server",
     "update": "cd submodules/eventsbne.me-generated; git submodule init; git submodule update;git pull origin master;",
     "build": "npm run update;cp submodules/eventsbne.me-generated/generated/* source/ -R; hexo generate; cp _redirects public/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,10 +29,12 @@
     "hexo-generator-feed": "^1.2.2",
     "hexo-generator-index": "^0.2.0",
     "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-browserify": "^0.1.0",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-less": "^0.2.0",
     "hexo-renderer-marked": "^0.3.0",
-    "hexo-server": "^0.2.0"
+    "hexo-server": "^0.2.0",
+    "moment": "^2.20.1"
   },
   "devDependencies": {
     "hexo-cli": "^1.0.4"

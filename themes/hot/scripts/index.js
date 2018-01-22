@@ -10,6 +10,10 @@ function printDate(source){
   }
 }
 
+function relativeDate(source){
+  return `<time class="app-enhance" data-app="relativeDate" datetime="${new Date(source).toISOString()}">${new Date(source)}</time>`;
+}
+
 function getPostAuthor(site, post){
   var author = site.data.authors[post.author];
   if (!author){
@@ -57,5 +61,5 @@ function getCopyright(config, site, post){
 
 hexo.extend.helper.register('printDate', printDate);
 hexo.extend.helper.register('postAuthor', getPostAuthor);
-
 hexo.extend.helper.register('footerCopyright', getCopyright);
+hexo.extend.helper.register('relativeDate', relativeDate);
