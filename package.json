@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build;hexo server",
     "update": "cd submodules/eventsbne.me-generated; git submodule init; git submodule update;git pull origin master;",
-    "build": "npm run update;cp submodules/eventsbne.me-generated/generated/* source/ -R; hexo generate; cp _redirects public/",
+    "build": "npm run update;rm source/events -rf;cp submodules/eventsbne.me-generated/generated/* source/ -R; hexo generate; cp _redirects public/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
