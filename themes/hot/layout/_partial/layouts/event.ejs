@@ -17,11 +17,11 @@
               <time
                 class="d-block"
                 itemprop="startDate"
-                datetime="<%= new Date(Number(page.timeStart)).toISOString() %>"
-                content="<%= new Date(Number(page.timeStart)).toISOString() %>"
+                datetime="<%= new Date(page.timeStart).toISOString() %>"
+                content="<%= new Date(page.timeStart).toISOString() %>"
                 >
-                <div class="time display-4 mb-0"><%= time(new Date(Number(page.timeStart)), config.time_format) %></div>
-                <div class="date h2 styled-yellow"><%= date(new Date(Number(page.timeStart)), config.date_format) %></div>
+                <div class="time display-4 mb-0"><%= time(new Date(page.timeStart), config.time_format) %></div>
+                <div class="date h2 styled-yellow"><%= date(new Date(page.timeStart), config.date_format) %></div>
               </time>
             <%- page.image ? '</div></div>' : ''%>
           </div>

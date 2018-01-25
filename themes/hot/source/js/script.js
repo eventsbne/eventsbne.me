@@ -47,7 +47,7 @@ function initFetch(){
     .then(response => response.json())
     .then((payload) => {
       const now = Date.now();
-      const upcoming = payload.events.filter(e => e.timeStart > now);
+      const upcoming = payload.events.filter(e => new Date(e.timeStart) > now);
       runApps({
         upcoming,
       });
