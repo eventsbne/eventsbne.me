@@ -83,3 +83,7 @@ feed:
   content:
   content_limit: 10000000
   content_limit_delim: ' '
+
+sitemap:
+    path: sitemap.xml
+    template: ./themes/hot/sitemap.xml
