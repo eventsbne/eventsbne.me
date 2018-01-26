@@ -1,10 +1,11 @@
 # Header
 menu:
-  Home: /
   Upcoming events: /upcoming/
+  Speaking: /speaking/
 menuFooter:
   Home: /
   Upcoming events: /upcoming/
+  Speaking: /speaking/
   News archive: /archives/
   Privacy policy: /privacy/
 rss: /rss.xml

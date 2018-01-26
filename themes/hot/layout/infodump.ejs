@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <%- partial('_partial/article', {post: page, index: false}) %>
+    </div>
+    <div class="col-md-12">
+      <% page.sections.forEach(function(section){ %>
+        <h2 class="mt-5"><%= section.title %></h2>
+        <p class=""><%= section.description %></p>
+        <div class="card-columns">
+          <% section.items.forEach(function(item){ %>
+            <div class="card">
+              <% if(item.image) { %>
+                <a href="<%= item.link %>" aria-hidden="true">
+                  <img class="card-img-top" src="<%= item.image %>" alt="">
+                </a>
+              <% } %>
+              <div class="card-body">
+                <h4 class="card-title h5"><a href="<%= item.link %>"><%= item.title %></a></h4>
+                <p class="card-text"><%= item.description %></p>
+                <p class="card-text"><small class="text-muted"><%= item.byline %></small></p>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- partial('_partial/footer-recirculation') %>
