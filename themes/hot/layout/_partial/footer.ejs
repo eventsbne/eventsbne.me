@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <ul class="list-inline mb-3 mt-3">
+          <ul class="list-inline mt-3 mb-0">
             <% for (var i in theme.menuFooter){ %>
             <li class="list-inline-item">
-              <a href="<%- url_for(theme.menuFooter[i]) %>" class="btn btn-dark"><%= i %></a>
+              <a href="<%- url_for(theme.menuFooter[i]) %>" class="btn btn-dark  mb-3"><%= i %></a>
             </li>
             <% } %>
           </ul>
