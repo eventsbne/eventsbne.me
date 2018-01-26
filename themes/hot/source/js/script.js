@@ -77,7 +77,13 @@ function fetchDate(date, placeholder){
     .catch(e => placeholder.innerHTML = makeMessage('text-white bg-danger', e.text));
 }
 
+let loadedTwitter = false;
 const apps = {
+  twitter: () => {
+    if(loadedTwitter) return;
+    initTwitter();
+    loadedTwitter = true;
+  },
   upcomingToday: (data, config, el) => {
     if(!data.upcoming) return;
     const events = data.upcoming.slice(0, 4);
@@ -150,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Kick off stuff
 initFetch();
-initTwitter();
 
 // Half hourly data refresh
 setInterval(initFetch, 1000 * 60 * 30);
