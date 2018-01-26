@@ -1,1 +1,10 @@
-<%- partial('_partial/layouts/'+(page.layout || 'page'), {page}) %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <%- partial('_partial/article', {post: page, index: false}) %>
+    </div>
+    <div class="col-md-4">
+      <%- partial('_partial/sidebar-page') %>
+    </div>
+  </div>
+</div>
