@@ -37,7 +37,7 @@
       <div class="col-md-5 offset-md-1">
         <%- page.content %>
 
-        <div class="card mt-5">
+        <div class="card mt-5 mb-5">
           <div class="card-header">
             <h2 class="h6 mb-0">Getting there</h2>
           </div>
@@ -52,7 +52,7 @@
                     <span hidden itemprop="addressRegion"><%= page.venue.contactCountry %></span>
                   </div>
                 <% } %>
-                <a href="<%= page.url %>" class="btn btn-primary mt-2">Get Tickets</a>
+                <a href="<%= page.url %>" class="btn btn-primary mt-2 mb-3">Get Tickets</a>
               </div>
               <div class="col-md-7">
                 <% if(page.venue && page.venue.lon && page.venue.lat) { %>
@@ -60,7 +60,7 @@
                     <img
                     style="width:100%;height:auto;"
                     alt="map of <%= page.venue.name %>, <%= page.venue.contactCity %>"
-                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v9/static/pin-s-building+285A98(<%= page.venue.lon %>,<%= page.venue.lat %>)/<%= page.venue.lon %>,<%= page.venue.lat %>,13,0/350x250@2x?access_token=pk.eyJ1IjoiYXNoa3lkIiwiYSI6ImNqY25haWgyaTBraDgyenFub21yYXEzZ3gifQ.K2j7J-jCiCUsDybuks_-zA&amp;attribution=false"
+                    src="https://api.mapbox.com/styles/v1/mapbox/streets-v9/static/pin-s-building+285A98(<%= page.venue.lon %>,<%= page.venue.lat %>)/<%= page.venue.lon %>,<%= page.venue.lat %>,13,0/223x159@2x?access_token=pk.eyJ1IjoiYXNoa3lkIiwiYSI6ImNqY25haWgyaTBraDgyenFub21yYXEzZ3gifQ.K2j7J-jCiCUsDybuks_-zA&amp;attribution=false"
                     >
                   </a>
                 <% } else { %>
