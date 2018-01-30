@@ -14,6 +14,12 @@ sections:
         image: /images/speaking/catt-small-become-a-speaker.png
         description: This post is part of a 10-piece series on public speaking.
       -
+        title: "PyCon AU title, abstract & bio tips"
+        byline:
+        link: https://2017.pycon-au.org/program/proposal-tips/proposal-tips-part-two/
+        image:
+        description: Tips on writing your speaker profile, talk title, abstract & target audience.
+      -
         title: 12 pieces of advice for giving talks that have impact
         byline: by Kate Torgovnick May
         link: https://blog.ted.com/12-pieces-of-advice-for-giving-talks-that-have-impact/
