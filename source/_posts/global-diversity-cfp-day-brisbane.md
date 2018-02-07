@@ -28,3 +28,5 @@ It was satisfying chatting to folks and hearing about their genuinely awesome ta
 Overall I'm so proud of everyone who attended, and thankful for the global group who put the resources together. It was a great day and now I can't wait to see the attendees present at meetups and conferences!
 
 <img src="/images/2018/gdcfpday-brisbane.jpg" alt="Global Diversity CFP Day attendees in Brisbane">
+
+Update: we had two attendees give talks at BrisJS on Monday. Josh Bryd's <a href="https://www.youtube.com/watch?v=YMFNZ1beR14&index=1&list=PLTWhCv9icJ4ZOBRlwaRBEdvu72F4plfbn">How I learned to stop worrying and love charting North Korean missile ranges in D3.js</a>, and Kartik Gupta's lightning talk explainer on <a href="https://www.youtube.com/watch?v=Gbcy2rtmnf4&feature=youtu.be">polyfills, ponyfills, and prollyfills</a>.
