@@ -78,6 +78,7 @@ function fetchDate(date, placeholder){
 }
 
 let loadedTwitter = false;
+
 const apps = {
   twitter: () => {
     if(loadedTwitter) return;
@@ -151,6 +152,10 @@ function runApps(data){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  if(document.querySelector('.twitter-tweet')){
+    loadedTwitter = true;
+    initTwitter();
+  }
   runApps({});
 });
 
