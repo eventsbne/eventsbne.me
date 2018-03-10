@@ -92,6 +92,14 @@ sections:
         title: The Weekly CFP
         link: http://theweeklycfp.com/
         description: A free, weekly email with all the latest Call for Proposals. We'll highlight our favourites, note what's new and what's closing, and perhaps even include some tips.
+      -
+        title: Women Who Code
+        link: https://www.meetup.com/Women-Who-Code-Brisbane/
+        description: Women Who Code is a global nonprofit organization dedicated to inspiring women to excel in technology careers by creating a global, connected community of women in technology.
+      -
+        title: Brisbane IoT Meetup
+        link: https://www.meetup.com/Brisbane-Internet-of-Things-IOT-Meetup/
+        description: A community of people interested in IoT, working in IoT, establishing an IoT business, or looking to participate and learn about technologies enabling the Internet of Things.
 
 ---
 There are plenty of meetups in the Brisbane Tech scene who would love to hear you speak, as well as conferences looking for speakers all around the world.
