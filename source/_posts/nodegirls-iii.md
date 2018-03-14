@@ -1,10 +1,10 @@
 ---
-title: Building a community around NodeGirls
+title: Building a learning community around Node Girls
 author: ashkyd
 date: 2018-03-14 18:37:23
 tags: nodegirls, organizing
-description: In 2017 Anwesha Chatergee attended a RailsGirls coding workshop and loved the idea. Wanting to get into Javascript, she found that the NodeGirls movement didn't have a Brisbane chapter so decided to put together a team and start it herself.
-teaser:
+description: Community organizing is a tough job, but we've got some awesome folks in the Node community. Here's the story of the team that grew Node Girls Brisbane from the ground up.
+teaser: In 2017 Anwesha Chatergee attended a RailsGirls coding workshop and loved the idea. Wanting to get into Javascript, she found that the Node Girls movement didn't have a Brisbane chapter so decided to put together a team and start it herself.
 image: /images/2018/nodegirls-march.jpg
 ---
 In 2017 Anwesha Chatterjee attended a RailsGirls event and loved the idea. Wanting to get into Javascript, she found that the Node Girls movement didn't have a Brisbane chapter so decided to put together a team and start it herself.
@@ -21,7 +21,7 @@ Attendees had time to work through self-paced activities, network amongst themse
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Still can’t believe how big <a href="https://twitter.com/NodeGirlsBri?ref_src=twsrc%5Etfw">@NodeGirlsBri</a> community has become 😭💚 <a href="https://t.co/GXz2OdduxJ">pic.twitter.com/GXz2OdduxJ</a></p>&mdash; Sammy Herbert (@SammyHerbert) <a href="https://twitter.com/SammyHerbert/status/972952355447582720?ref_src=twsrc%5Etfw">March 11, 2018</a></blockquote>
 
 
-The Brisbane Node Girls workshop is entirely volunteer-run, and couldn't happen without the hard work of the organizer team (Anwesha Chatterjee, Dana Mison, Armağan Ersöz & Sammy Herbert). This event was sponsored by FishBurners, SixPivot, Just Digital People, and the Queensland Government.
+The Brisbane Node Girls workshop is entirely volunteer-run, and couldn't happen without the hard work of the organizer team (Anwesha Chatterjee, Dana Mison, Armağan Ersöz & Sammy Herbert), as well as the effort put in by the speakers, mentors, and attendees. This event was also sponsored by FishBurners, SixPivot, Just Digital People, and the Queensland Government.
 
 If you want to get in touch for more info on mentoring or attending the next one, check out the [Node Girls Brisbane](http://nodegirls.com.au/brisbane.html) site or follow them on Twitter [@NodeGirlsBri](https://mobile.twitter.com/nodegirlsbri).
 
