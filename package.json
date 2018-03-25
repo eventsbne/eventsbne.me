@@ -35,7 +35,8 @@
     "hexo-renderer-less": "^0.2.0",
     "hexo-renderer-marked": "^0.3.0",
     "hexo-server": "^0.2.0",
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14"
   },
   "devDependencies": {
     "hexo-cli": "^1.0.4"

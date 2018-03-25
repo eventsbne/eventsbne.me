@@ -3,26 +3,36 @@
     <div class="col-xl-8 col-lg-6 main-content">
       <h1 class="mb-3"><%= page.title %></h1>
       <p class="lead">Last updated <%- relativeDate(site.data.upcoming.timeUpdated) %></p>
-      <div class="list-group mb-4">
-      <% site.data.upcoming.events.forEach(function(event){ %>
-        <a
-          href="<%= event.uri %>"
-          class="wrap list-group-item list-group-item-action flex-column align-items-start"
-          title="Event at <%= new Date(event.timeStart).toString() %>">
-          <div class="d-flex w-100 justify-content-between">
-            <p>
-              <span class="mb-1 h6 wrap-target"><%= event.name %></span>
-              <br>
-              <small>
-                <%- relativeDate(event.timeStart) %>
-                with
-                <%= event.organizer %>
-              </small>
-            </p>
+
+      <% splitDays(site.data.upcoming.events).forEach(function(day){ %>
+        <h3><%= day.holiday || day.name %> <small><%= day.date %></small></h3>
+        <% if(!day.events.length) { %>
+          <div class="card mb-4 border-light">
+            <div class="card-body">No events today! 🤷</div>
           </div>
-        </a>
+        <% } else { %>
+          <div class="list-group mb-4">
+          <% day.events.forEach(function(event){ %>
+            <a
+              href="<%= event.uri %>"
+              class="wrap list-group-item list-group-item-action flex-column align-items-start"
+              title="Event at <%= new Date(event.timeStart).toString() %>">
+              <div class="d-flex w-100 justify-content-between">
+                <p>
+                  <span class="mb-1 h6 wrap-target"><%= event.name %></span>
+                  <br>
+                  <small>
+                    <%- relativeDate(event.timeStart) %>
+                    with
+                    <%= event.organizer %>
+                  </small>
+                </p>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+        <% } %>
       <% }) %>
-      </div>
       <%- partial('_widget/ad') %>
     </div>
     <div class="col-xl-4 col-lg-6 sidebar">

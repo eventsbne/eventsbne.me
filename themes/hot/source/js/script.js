@@ -6,8 +6,8 @@ function printDate(source){
   const date = new Date(source);
   const now = new Date();
 
-  if(date > moment().add(3, 'days')){
-    return moment(date).format('LL LT');
+  if(date < Date.now() || date > moment().add(3, 'days')){
+    return moment(date).format('hA MMM Mo');
   } else {
     return moment(date).format('dddd hA');
   }

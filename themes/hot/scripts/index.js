@@ -1,3 +1,6 @@
+const moment = require('moment-timezone');
+moment.tz.setDefault('Australia/Brisbane');
+
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 function printDate(source){
   const date = new Date(source);
@@ -11,7 +14,7 @@ function printDate(source){
 }
 
 function relativeDate(source){
-  return `<time class="app-enhance" data-app="relativeDate" datetime="${new Date(source).toISOString()}">${new Date(source)}</time>`;
+  return `<time class="app-enhance" data-app="relativeDate" datetime="${new Date(source).toISOString()}">${moment(new Date(source)).toISOString(true)}</time>`;
 }
 
 function getPostAuthor(site, post){
@@ -59,6 +62,31 @@ function getCopyright(config, site, post){
   }
 }
 
+function splitDays(events) {
+  const days = {};
+  events
+    .filter(event => moment(new Date(event.timeStart)) > moment().startOf('day'))
+    .filter(event => moment(new Date(event.timeStart)) < moment().endOf('day').add(2, 'weeks'))
+    .forEach(event => {
+      const timeStart = moment(new Date(event.timeStart));
+      const key = timeStart.format('YYYY MM DD');
+      const name = timeStart.format('dddd');
+      const date = timeStart.format('Do');
+      event.friendlyTimeStart = timeStart.format('h:mma');
+      if(!days[key]) days[key] = { name, date, events: [] };
+      if(event.uri.includes('/holiday')){
+        days[key].holiday = event.name;
+      } else {
+        days[key].events.push(event);
+      }
+    });
+
+  const iterable = Object.keys(days).map(key => days[key]);
+
+  return iterable;
+}
+
+hexo.extend.helper.register('splitDays', splitDays);
 hexo.extend.helper.register('printDate', printDate);
 hexo.extend.helper.register('postAuthor', getPostAuthor);
 hexo.extend.helper.register('footerCopyright', getCopyright);
