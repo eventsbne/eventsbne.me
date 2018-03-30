@@ -99,7 +99,7 @@ const apps = {
           <p>
             <span class="mb-1 h6 wrap-target">${e.name}</span>
             <br>
-            <small>${printDate(e.timeStart)} with ${e.organizer}</small>
+            <small>${printDate(e.timeStart)} ${e.organizer ? `with ${e.organizer}` : ''}</small>
           </p>
 
         </div>
