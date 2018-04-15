@@ -7,7 +7,7 @@ function printDate(source){
   const now = new Date();
 
   if(date < Date.now() || date > moment().add(3, 'days')){
-    return moment(date).format('hA MMM Mo');
+    return moment(date).format('hA MMM Do');
   } else {
     return moment(date).format('dddd hA');
   }
